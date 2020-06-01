@@ -9,9 +9,13 @@
 
 ## Assertions: Hamcrest
 
+* http://hamcrest.org/JavaHamcrest/tutorial
+
 ## Mockito
 
 ## Jacoco
+- Maven Plugin
+- Eclipse Plugin :  https://www.eclemma.org/
 
 ## Tools
 
