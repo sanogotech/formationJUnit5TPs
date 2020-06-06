@@ -17,6 +17,10 @@
 - Maven Plugin
 - Eclipse Plugin :  https://www.eclemma.org/
 
+## Rest-assured
+
+http://rest-assured.io/
+
 ## Tools
 
 ![Test Tools](https://github.com/sanogotech/formationJUnit5TPs/blob/master/docs/images/outilstesttools.jpg)
