@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core" template="layout.xhtml">
+
+	<ui:define name="content">
+		<h1>
+			<h:outputText id="pageTitle" value="#{msg['page1.title']}" />
+		</h1>
+		<p:panel id="panel" header="#{msg['page1.panel_title']}">
+			<h:outputLabel id="label" for="nextPage" value="#{msg['page1.text_page_label']}" />
+			<p:panelGrid columns="1">
+				<p:inputText id="pageText" value="#{navigator.nextPage}"
+				                       converterMessage="${msg['error.conversion_to_integer']}" 
+				                       validatorMessage="${msg['error.page_number_range']}">
+					<f:validateLongRange minimum="1" maximum="3" />
+				</p:inputText>
+				<h:message id="pageError" for="pageText" style="color:red" />
+			</p:panelGrid>
+			<p:commandButton id="nextPage"
+				value="#{msg['page1.next_page_button']}" action="#{navigator.go}"
+				ajax="false" />
+		</p:panel>
+	</ui:define>
+</ui:composition>

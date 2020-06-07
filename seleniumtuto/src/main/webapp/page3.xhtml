@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core" template="layout.xhtml">
+
+	<ui:define name="content">
+		<h1>
+			<h:outputText id="pageTitle" value="#{msg['page3.title']}" />
+		</h1>
+		<p:panelGrid id="panel" columns="2">
+			<f:facet name="header">
+                    #{msg['page3.panel_title']}
+                </f:facet>
+			<p:column>
+				<p:outputLabel id="label" for="pageList" value="#{msg['page3.select']}" />
+			</p:column>
+			<p:column>
+				<p:selectOneListbox id="pageList" value="#{navigator.nextPage}">
+					<f:selectItems value="#{navigator.pages}" />
+				</p:selectOneListbox>
+			</p:column>
+			<f:facet name="footer">
+				<p:commandButton id="nextPageButton"
+					value="#{msg['page3.next_page_button']}" action="#{navigator.go}"
+					ajax="false" />
+			</f:facet>
+		</p:panelGrid>
+	</ui:define>
+</ui:composition>

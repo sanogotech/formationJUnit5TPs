@@ -1,0 +1,16 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:p="http://primefaces.org/ui">
+
+<p:toolbar>
+    <p:toolbarGroup align="left">
+        <h1>
+            <h:outputText value="#{msg['header.title']}" />
+        </h1>
+    </p:toolbarGroup>
+    <p:toolbarGroup align="right">
+        <h:commandButton id="english_button" styleClass="flags english" action="#{prefs.setEnglishLocale()}" />
+        <h:commandButton id="french_button" styleClass="flags french" action="#{prefs.setFrenchLocale()}" />
+    </p:toolbarGroup>
+</p:toolbar>
+</html>

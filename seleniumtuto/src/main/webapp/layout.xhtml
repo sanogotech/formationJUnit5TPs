@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+>
+
+<h:head>
+    <title>Tutoriel Selenium</title>
+    <h:outputStylesheet name="styles.css" library="css" />
+</h:head>
+<h:body>
+    <f:view locale="#{prefs.locale}">
+        <div id="header">
+            <h:form id="headerForm">
+                <ui:include src="header.xhtml" />
+            </h:form>
+        </div>
+        <div id="content">
+            <h:form id="contentForm">
+                <ui:insert name="content">
+                    <h2>Content</h2>
+                </ui:insert>
+            </h:form>
+        </div>
+        <div id="footer">
+            <ui:include src="footer.xhtml" />
+        </div>
+    </f:view>
+</h:body>
+</html>

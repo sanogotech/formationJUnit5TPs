@@ -1,0 +1,40 @@
+@CHARSET "UTF-8";
+
+#header {
+    width: 99%;
+    height: 5em;
+    position: fixed;
+    top: 5px;
+    z-index: 10;
+}
+
+#content {
+    width: 99%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    position:absolute;
+    top: 5em;
+    z-index: 5;
+}
+
+#footer {
+    width: 99%;
+    position: fixed;
+    bottom: 5px;
+    z-index: 10;
+}
+
+.flags {
+	border: 0;
+	margin: 2px;
+	width: 22px;
+	height: 16px;
+}
+
+.english {
+	background-image: url("#{resource['images:drapeau_anglais.png']}");
+}
+
+.french {
+	background-image: url("#{resource['images:drapeau_francais.png']}");
+}

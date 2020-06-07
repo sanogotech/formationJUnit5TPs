@@ -1,17 +1,35 @@
 package com.formation.junit5.parameterized;
 
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.ArgumentsSource;
+import org.junit.jupiter.params.provider.CsvFileSource;
+import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.jupiter.params.provider.EmptySource;
+import org.junit.jupiter.params.provider.MethodSource;
+import org.junit.jupiter.params.provider.NullAndEmptySource;
+import org.junit.jupiter.params.provider.NullSource;
+import org.junit.jupiter.params.provider.ValueSource;
 
 class StringsUnitTest {
 
+	
+	@ParameterizedTest
+	@ValueSource(strings = { "example", "parameter" })
+	void parameterizedTest(String input) {
+	    assertNotNull(input);
+	}
+	
+	
+	
     static Stream<Arguments> arguments = Stream.of(
             Arguments.of(null, true), // null strings should be considered blank
             Arguments.of("", true),
@@ -44,7 +62,7 @@ class StringsUnitTest {
     }
 
     @ParameterizedTest
-    @MethodSource("com.baeldung.junit5.parameterized.StringParams#blankStrings")
+    @MethodSource("com.formation.junit5.parameterized.StringParams#blankStrings")
     void isBlank_ShouldReturnTrueForNullOrBlankStringsExternalSource(String input) {
         assertTrue(Strings.isBlank(input));
     }
