@@ -1,0 +1,51 @@
+
+## Dynamic Tests
+Dynamic Tests
+Jupiter, JUnit 5’s primary test API, offers a few classes and an annotation that together address our problem.
+
+DynamicTest, DynamicContainer, and @TestFactory
+
+##  JUnit 5 = JUnit Platform + JUnit Jupiter + JUnit Vintage
+
+## mvn site : Surefire init test reporting
+5.1 It’s better to generate a project site to view the unit test result in HTML format. 
+To add the surefire unit test report into the site, add the following reporting section.
+
+##  Test Best Practices
+
+https://howtodoinjava.com/best-practices/unit-testing-best-practices-junit-reference-guide/#7
+
+## Timeout
+
+Timeout time is specified in milliseconds.
+
+//Please note that above timeout @Rule applies on @Before and @After methods as well. So use it carefully.
+
+## Mockito 3
+
+Mockito 1.x? See what's new in Mockito 2! Mockito 3 does not introduce any breaking API changes, but now requires Java 8 over Java 6 for Mockito 2.
+
+##  Bonne Pratiques
+
+Conseils pour rédiger de bons tests unitaires 
+     Tester une seule unité de code à la fois 
+     Ne pas faire d'assertions inutiles 
+     Rendre chaque test indépendant des autres 
+     Mock out tous les services externes et indiquer 
+     Ne pas tester les paramètres de configuration de l'unité 
+     Nommez vos tests unitaires de manière claire et cohérente 
+     Écrivez d'abord des tests pour les méthodes qui ont le moins de dépendances et montez 
+     toutes les méthodes Toutes les méthodes, quelle que soit leur visibilité, devraient avoir des tests unitaires appropriés 
+     Visez à ce que chaque méthode de test unitaire effectue exactement une assertion 
+     Créez des tests unitaires qui exceptions cibles 
+     Utilisez les méthodes d'assertion les plus appropriées. 
+     Mettez les paramètres d'assertion dans le bon ordre
+     Assurez-vous que le code de test est séparé du code de production 
+     N'imprimez rien dans les tests unitaires 
+     N'utilisez pas de membres statiques dans une classe de test 
+     N'écrivez pas vos propres blocs catch qui n'existent que pour échouer un test 
+     Ne vous fiez pas aux tests indirects 
+     Intégrez les testcases à la construction script 
+     Ne pas ignorer les tests unitaires 
+     Capturer les résultats à l'aide du 
+résumé du formateur XML
