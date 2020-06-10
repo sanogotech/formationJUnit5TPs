@@ -1,5 +1,16 @@
 
+### @InjectMocks //@Mock or @Spy
+The @InjectMocks annotation tries to instantiate the testing object instance and injects fields annotated with @Mock or @Spy into private fields of the testing object.
+** @InjectMocks  vs @Autowired
+** @Mock class  variable de @InhectMock
+** @Spy  instance normale add , comme list ou autres avec comportement mock 
 
+Mock vs. Spy in Mockito
+Now – let's discuss the difference between Mock and Spy in Mockito – not the theoretical differences between the two concepts, just how they differ within Mockito itself.
+
+When Mockito creates a mock – it does so from the Class of a Type, not from an actual instance. The mock simply creates a bare-bones shell instance of the Class, entirely instrumented to track interactions with it.
+
+On the other hand, the spy will wrap an existing instance. It will still behave in the same way as the normal instance – the only difference is that it will also be instrumented to track all the interactions with it.
 ## @RunWith(JUnitPlatform.class)
 Finally, let's add this annotation to be able to run the test:
 
