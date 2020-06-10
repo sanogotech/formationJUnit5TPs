@@ -1,5 +1,20 @@
 
 
+## @RunWith(JUnitPlatform.class)
+Finally, let's add this annotation to be able to run the test:
+
+1
+2
+3
+4
+@RunWith(JUnitPlatform.class)
+public class GreetingsTest {
+    // ...
+}
+The JUnitPlatform class is a JUnit4-based runner that let us run JUnit4 tests on the JUnit Platform.
+
+Let's keep in mind that JUnit4 does not support all the features of the new JUnit Platform, so this runner has a limited functionality.
+
 ## https://blog.gurock.com/myths-test-driven-development/
 - TDD est synonyme de tests unitaires
 - Avec TDD, vous écrivez tous les tests avant d'écrire le code de production
