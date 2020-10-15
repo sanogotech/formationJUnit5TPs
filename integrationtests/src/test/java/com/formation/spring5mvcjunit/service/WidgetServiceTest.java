@@ -40,6 +40,7 @@ public class WidgetServiceTest {
         // Setup our mock repository
         Widget widget = new Widget(1l, "Widget Name", "Description", 1);
         doReturn(Optional.of(widget)).when(repository).findById(1l);
+        
 
         // Execute the service call
         Optional<Widget> returnedWidget = service.findById(1l);

@@ -14,32 +14,32 @@
  * limitations under the License.
  *
  */
-package io.github.bonigarcia;
+package com.formation;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
+import io.github.bonigarcia.seljup.DriverCapabilities;
+import io.github.bonigarcia.seljup.DriverUrl;
 import io.github.bonigarcia.seljup.SeleniumExtension;
 
+@Disabled
 @ExtendWith(SeleniumExtension.class)
-public class LocalWebDriverTest {
+public class RemoteWebDriverTest {
 
     @Test
-    public void testWithChrome(ChromeDriver chrome) {
-        chrome.get("https://bonigarcia.github.io/selenium-jupiter/");
+    void testWithRemoteChrome(
+            @DriverUrl("http://localhost:4444/wd/hub") @DriverCapabilities({
+                    "browserName=chrome",
+                    "version=59" }) RemoteWebDriver remoteChrome) {
 
-        assertTrue(chrome.getTitle().startsWith("Selenium-Jupiter"));
-    }
+        remoteChrome.get("https://bonigarcia.github.io/selenium-jupiter/");
 
-    @Test
-    public void testWithFirefox(FirefoxDriver firefox) {
-        firefox.get("http://www.seleniumhq.org/");
-
-        assertTrue(firefox.getTitle().startsWith("Selenium"));
+        assertTrue(remoteChrome.getTitle().contains("JUnit 5 extension"));
     }
 
 }
